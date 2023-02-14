@@ -1,0 +1,3 @@
+# Generated files from dotnet build
+bin/**
+obj/**

@@ -5,6 +5,8 @@
 
 /* global document, Office */
 
+import { dotnet } from "./dotnet.js"
+
 Office.onReady((info) => {
   if (info.host === Office.HostType.Outlook) {
     document.getElementById("sideload-msg").style.display = "none";
@@ -20,3 +22,9 @@ export async function run() {
   // Write message property value to the task pane
   document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
 }
+
+const { getAssemblyExports, getConfig } = await dotnet.create();
+
+exports = await getAssemblyExports(getConfig().mainAssemblyName);
+
+await dotnet.run();

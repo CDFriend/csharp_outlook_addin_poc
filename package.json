@@ -4,7 +4,8 @@
   "description": "You can build the app from Visual Studio or from the command-line:",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node dev-server.js",
+    "start:desktop": "office-addin-debugging start manifest.xml desktop",
     "validate:manifest": "office-addin-manifest validate manifest.xml"
   },
   "repository": {
@@ -18,6 +19,10 @@
   },
   "homepage": "https://github.com/CDFriend/csharp_outlook_addin_poc#readme",
   "devDependencies": {
-    "office-addin-manifest": "^1.12.0"
+    "finalhandler": "^1.2.0",
+    "office-addin-debugging": "^4.6.7",
+    "office-addin-dev-certs": "^1.11.1",
+    "office-addin-manifest": "^1.12.0",
+    "serve-static": "^1.15.0"
   }
 }

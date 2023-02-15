@@ -10,7 +10,7 @@ const imports = {
 const mainJsPath = "./node_modules/dotnet-interop/main.js"
 const { setupRuntimeAndGetExports } = await import(mainJsPath);
 
-const exports = setupRuntimeAndGetExports(imports).then(() => {
+const exports = setupRuntimeAndGetExports(imports).then((exports) => {
     Office.onReady((info) => {
         if (info.host === Office.HostType.Outlook) {
             document.getElementById('runButton').onclick = exports.AddinActions.HandleButtonClick;

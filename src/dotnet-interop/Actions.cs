@@ -8,10 +8,10 @@ public partial class AddinActions {
     }
 
     private partial class Interop {
-        [JSImport("outlook.getSelectedMailboxItem", "main.js")]
+        [JSImport("getSelectedMailboxItem", "main.js")]
         internal static partial JSObject GetSelectedMailboxItem();
 
-        [JSImport("outlook.setOutText", "main.js")]
+        [JSImport("setOutText", "main.js")]
         internal static partial void SetOutText(string outText);
     }
 }

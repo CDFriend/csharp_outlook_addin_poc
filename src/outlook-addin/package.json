@@ -6,11 +6,19 @@
   "scripts": {
     "serve": "node dev-server.js",
     "build:dotnet": "dotnet publish -c Release ../dotnet-interop/outlook_poc.csproj",
-    "build:dotnet:debug": "dotnet publish -c Debug ../dotnet-interop/outlook_poc.csproj"
+    "build:dotnet:debug": "dotnet publish -c Debug ../dotnet-interop/outlook_poc.csproj",
+    "start:desktop": "office-addin-debugging start manifest.xml desktop"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotnet-interop": "file:../dotnet-interop/dist"
+  },
+  "devDependencies": {
+    "finalhandler": "^1.2.0",
+    "office-addin-debugging": "^4.6.7",
+    "office-addin-dev-certs": "^1.11.1",
+    "office-addin-manifest": "^1.12.0",
+    "serve-static": "^1.15.0"
   }
 }

@@ -5,17 +5,11 @@
     <WasmMainJSPath>main.js</WasmMainJSPath>
     <OutputType>Exe</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <WasmAppDir>dist</WasmAppDir>
   </PropertyGroup>
 
   <ItemGroup>
-    <WasmExtraFilesToDeploy Include="taskpane.html" />
     <WasmExtraFilesToDeploy Include="main.js" />
-    <WasmExtraFilesToDeploy Include="outlook.js" />
-    <WasmExtraFilesToDeploy Include="manifest.xml" />
-    <WasmExtraFilesToDeploy Include="assets/*" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="node_modules/**"/>
+    <WasmExtraFilesToDeploy Include="package.json" />
   </ItemGroup>
 </Project>

@@ -8,24 +8,6 @@ const { setModuleImports, getAssemblyExports, getConfig } = await dotnet
     .withApplicationArgumentsFromQuery()
     .create();
 
-
-
-
-
-const text = exports.MyClass.Greeting();
-console.log(text);
-
-document.getElementById('out').innerHTML = text;
-
-
-Office.onReady((info) => {
-    if (info.host === Office.HostType.Outlook) {
-        document.getElementById('runButton').onclick = exports.AddinActions.HandleButtonClick;
-    }
-});
-
-await dotnet.run();
-
 export async function setupRuntimeAndGetExports(imports) {
     // Sets all the functions which will be required by the .NET portion of the code. These can
     // be accessed by [JSImport] statements on the C# side.

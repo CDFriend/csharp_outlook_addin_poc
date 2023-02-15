@@ -4,6 +4,7 @@
   "description": "Outlook addin with C# interop",
   "main": "outlook.js",
   "scripts": {
+    "serve": "node dev-server.js",
     "build:dotnet": "dotnet publish -c Release ../dotnet-interop/outlook_poc.csproj",
     "build:dotnet:debug": "dotnet publish -c Debug ../dotnet-interop/outlook_poc.csproj"
   },

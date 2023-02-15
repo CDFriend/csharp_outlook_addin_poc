@@ -10,7 +10,12 @@
   <ItemGroup>
     <WasmExtraFilesToDeploy Include="taskpane.html" />
     <WasmExtraFilesToDeploy Include="main.js" />
+    <WasmExtraFilesToDeploy Include="outlook.js" />
     <WasmExtraFilesToDeploy Include="manifest.xml" />
     <WasmExtraFilesToDeploy Include="assets/*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="node_modules/**"/>
   </ItemGroup>
 </Project>

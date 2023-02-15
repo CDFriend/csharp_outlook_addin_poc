@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 import { dotnet } from './dotnet.js'
+import outlookExports from './outlook.js';
 
 const { setModuleImports, getAssemblyExports, getConfig } = await dotnet
     .withDiagnosticTracing(false)
@@ -9,6 +10,7 @@ const { setModuleImports, getAssemblyExports, getConfig } = await dotnet
     .create();
 
 setModuleImports('main.js', {
+    outlook: outlookExports,
     window: {
         location: {
             href: () => globalThis.window.location.href
@@ -18,8 +20,17 @@ setModuleImports('main.js', {
 
 const config = getConfig();
 const exports = await getAssemblyExports(config.mainAssemblyName);
+
 const text = exports.MyClass.Greeting();
 console.log(text);
 
 document.getElementById('out').innerHTML = text;
+
+
+Office.onReady((info) => {
+    if (info.host === Office.HostType.Outlook) {
+        document.getElementById('runButton').onclick = exports.AddinActions.HandleButtonClick;
+    }
+});
+
 await dotnet.run();

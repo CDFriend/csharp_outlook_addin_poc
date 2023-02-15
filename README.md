@@ -12,20 +12,15 @@ Components of the repo:
 * Outlook 2016 or greater
 * [.NET 7 RC1 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) or later
 * Node/npm
+* .NET WASM tools workload: `dotnet workload install wasm-tools`
 
 ### Getting Started
 
-Start by compiling the .NET wasm app bundle:
+From src/outlook-addin, Build the .NET component and start the web server.
 
 ```
-dotnet workload install wasm-tools
-dotnet publish -c Release
-```
-
-Start the web server:
-
-```
-npm install
+cd src/outlook-addin
+npm run build:dotnet ; npm install
 npm run serve
 ```
 
